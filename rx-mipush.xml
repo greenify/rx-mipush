@@ -1,4 +1,10 @@
 <prescriptions xmlns="http://greenify.github.io/schemas/prescription/v3">
   <prescription type="service" class="com.xiaomi.push.service.XMPushService" sender="any" />
-  <prescription link="/greenify/rx-mipush-wakeups" />
+  <!-- TODO: Use link instead of the following direct paste from rx-mipush-wakeups -->
+  <prescription type="service" sender="other-app">
+    <intent-filter>
+      <action name="com.xiaomi.mipush.sdk.WAKEUP" />
+    </intent-filter>
+  </prescription>
+  <prescription type="service" class="com.xiaomi.push.service.XMJobService" sender="other" />
 </prescriptions>
